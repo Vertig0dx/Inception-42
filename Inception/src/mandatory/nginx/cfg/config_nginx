@@ -1,0 +1,22 @@
+server {
+
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name www.lmiguel.42.fr lmiguel.42.fr;
+
+    ssl_certificate /etc/ssl/private/nginx.crt;
+    ssl_certificate_key /etc/ssl/private/nginx.key;
+
+    ssl_protocol TLSv1.3;
+
+    index index.php;
+    root /var/www/html;
+
+    location ~ [^/]\\.php(/|$) {
+        
+        try_files $uri =404;
+        return 200 "Hello from NGINX! Running TLSv1.3 \n";
+        add_header Content-Type text/plain;
+    }
+}
