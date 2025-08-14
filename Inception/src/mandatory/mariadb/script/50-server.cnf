@@ -1,0 +1,62 @@
+#every group inside [] is read by the mariadb server.
+#for now, most settings will be in the mysqld group
+
+[server]
+
+[mysqld]
+
+#user under which the server will be run under
+
+user = mysql
+
+#location of the file that will store the server's PID
+
+pid-file = /run/mysqld/mysqld.pid
+
+#unix socket file for local connections
+
+socket = /run/mysqld/mysqld.sock
+
+#sets the TCP port for mysql/mariadb (default is 3306)
+
+port = 3306
+
+#sets the mariadb installation, database storage and temporary file storage directories, respectively
+
+basedir = /usr
+
+datadir = /var/lib/mysql
+
+tmpdir = /tmp
+
+#location of message/localization files
+
+lc-messages-dir = /usr/share/mysql
+
+#sets the allowed IP addresses (in this case, all of them are allowed.)
+
+bind-address = 0.0.0.0
+
+#sets a small query cache
+
+query_cache_size = 16M
+
+#error log location
+
+log_error = /var/log/mysql/error.log
+
+#delete binlog logs after x days (in this case, 10 days)
+
+expire_logs_days = 10
+
+#selects which unicode (available characters) to use
+
+character-set-server = utf8mb4
+
+collation-server = utf8mb4_general_ci
+
+[embedded]
+
+[mariadb]
+
+[mariadb-10.3]

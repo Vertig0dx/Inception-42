@@ -32,6 +32,6 @@ status :
 
 	@docker ps
 
-log :
+clean:
 
-	@docker logs //Docker to print logs to, Paulo used Fastify, research and apply
+	@docker system prune -a --volumes

@@ -13,11 +13,11 @@ server {
     server_name www.$DOMAIN_NAME $DOMAIN_NAME;
 
     ssl_certificate /etc/ssl/private/nginx.crt;
-    ssl_certificate_key /etc/ssl/private/nginx.key;" > /etc/nginx/sites-available/default
+    ssl_certificate_key /etc/ssl/private/nginx.key;" > /etc/nginx/sites-enabled/default
 
 echo '
 
-    ssl_protocol TLSv1.3;
+    ssl_protocols TLSv1.3;
 
     index index.php;
     root /var/www/html;
@@ -28,7 +28,7 @@ echo '
         return 200 "Hello from NGINX! Running TLSv1.3 \n";
         add_header Content-Type text/plain;
     }
-} ' >> /etc/nginx/sites-available/default
+} ' >> /etc/nginx/sites-enabled/default
 
 
 nginx -g "daemon off;"

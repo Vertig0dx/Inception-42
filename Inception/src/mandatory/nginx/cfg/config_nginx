@@ -5,10 +5,10 @@ server {
 
     server_name www.lmiguel.42.fr lmiguel.42.fr;
 
-    ssl_certificate /etc/ssl/private/nginx.crt;
+    ssl_certificate /etc/ssl/certs/nginx-ss.crt
     ssl_certificate_key /etc/ssl/private/nginx.key;
 
-    ssl_protocol TLSv1.3;
+    ssl_protocols TLSv1.3;
 
     index index.php;
     root /var/www/html;
