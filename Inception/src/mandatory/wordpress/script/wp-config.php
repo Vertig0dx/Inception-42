@@ -3,19 +3,19 @@
 #mysql settings
 
 #database name
-define('DB_NAME', $_ENV['WORDPRESS_DB_NAME'] ?? 'zilazdumi');
+define('DB_NAME', 'zilazdumi');
 #getenv('WORDPRESS_DB_NAME')
 
 #database username
-define('DB_USER', $_ENV['WORDPRESS_DB_USER'] ?? 'kazakidum');
+define('DB_USER', 'kazakidum');
 #getenv('WORDPRESS_DB_USER')
 
 #database password
-define('DB_PASSWORD', $_ENV['WORDPRESS_DB_PASSWORD'] ?? 'rakizar');
+define('DB_PASSWORD', 'rakizar');
 #getenv('WORDPRESS_DB_PASSWORD')
 
 #database hostname
-define('DB_HOST', $_ENV['WORDPRESS_DB_HOST'] ??  'mariadb');
+define('DB_HOST', 'mariadb');
 
 #database charset, utf8mb4 for unicode support (non-latin characters, for example)
 define('DB_CHARSET', 'utf8mb4');

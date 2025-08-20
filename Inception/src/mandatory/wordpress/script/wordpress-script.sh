@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 #create directory structure for nginx and wordpress files
 

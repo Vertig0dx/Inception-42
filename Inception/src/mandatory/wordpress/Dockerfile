@@ -22,4 +22,4 @@ COPY ./script/wp-config.php /
 
 RUN chmod +x /wordpress-script.sh
 
-CMD ["bash", "/wordpress-script.sh"]
+CMD ["/wordpress-script.sh"]

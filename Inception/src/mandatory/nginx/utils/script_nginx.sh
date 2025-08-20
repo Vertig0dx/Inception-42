@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # this line is used to generate an SSL certificate. 
 # since it is self-signed, it will trigger some security concens.
 
@@ -23,7 +25,7 @@ server {
         try_files \$uri \$uri/ /index.php?\$args;
     }
 
-    location ~ [^/]\.php(/|\$) {
+    location ~ \.php$ {
         include snippets/fastcgi-php.conf;
         fastcgi_pass wordpress:9000;
         fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;

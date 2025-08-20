@@ -14,4 +14,4 @@ COPY ./utils/script_nginx.sh /
 
 RUN chmod +x /script_nginx.sh
 
-CMD ["bash", "/script_nginx.sh"]
+CMD ["/script_nginx.sh"]
