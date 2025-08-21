@@ -8,10 +8,22 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ngi
 
 cat > /etc/nginx/sites-enabled/default <<EOF
 server {
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
 
-    server_name www.$DOMAIN_NAME $DOMAIN_NAME;
+    listen 80;
+    listen [::]:80;
+
+    server_name www.lmiguel.42.fr lmiguel.42.fr;
+   
+    return 301 https://\$host\$request_uri;
+}
+
+
+server {
+
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    server_name www.lmiguel.42.fr lmiguel.42.fr;
 
     ssl_certificate /etc/ssl/private/nginx.crt;
     ssl_certificate_key /etc/ssl/private/nginx.key;
@@ -26,6 +38,7 @@ server {
     }
 
     location ~ \.php$ {
+        
         include snippets/fastcgi-php.conf;
         fastcgi_pass wordpress:9000;
         fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;

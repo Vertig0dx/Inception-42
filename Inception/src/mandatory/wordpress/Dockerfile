@@ -9,6 +9,8 @@ RUN apt-get install php-fpm php-mysql php-mysqli -y
 
 RUN apt-get install mariadb-client -y
 
+RUN apt-get install php-redis -y
+
 RUN apt-get install curl -y
 
 RUN apt-get clean

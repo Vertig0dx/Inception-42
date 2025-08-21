@@ -48,9 +48,9 @@ define('NONCE_SALT',       ' 8=SYqJ2z`SMPZSt;3)d-KVBkiR(@+z.@[UFwoaZkn-v8OqEQ5d9
 
 #redis options (REQUIRES php8.3-redis EXTENSION IN DOCKERFILE)
 
-#define('WP_REDIS_HOST', 'redis');
+define('WP_REDIS_HOST', 'redis');
 
-#define('WP_REDIS_PORT', 6379);
+define('WP_REDIS_PORT', 6379);
 
 define('WP_CACHE', true);
 

@@ -81,3 +81,23 @@ services:
             - inception
 
         restart: always
+
+    redis:
+        container_name: redis
+
+        build: ./bonus/redis/.
+
+        image: redis:42
+
+        volumes:
+            - wordpress:/var/www/html
+
+        depends_on:
+            - wordpress
+
+        networks:
+            - inception
+
+        restart: always
+    
+    

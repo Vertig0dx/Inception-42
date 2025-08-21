@@ -83,7 +83,7 @@ mkdir -p /run/php
 
 #enables redis
 
-#wp redis enable --allow-root
+wp redis enable --allow-root
 
 #runs php in background
 
