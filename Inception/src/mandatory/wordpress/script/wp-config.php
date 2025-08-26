@@ -2,20 +2,24 @@
 
 #mysql settings
 
+
+
 #database name
-define('DB_NAME', 'zilazdumi');
-#getenv('WORDPRESS_DB_NAME')
+define('DB_NAME', getenv('WORDPRESS_DB_NAME'));
 
 #database username
-define('DB_USER', 'kazakidum');
-#getenv('WORDPRESS_DB_USER')
+define('DB_USER', getenv('WORDPRESS_DB_USER'));
 
 #database password
-define('DB_PASSWORD', 'rakizar');
-#getenv('WORDPRESS_DB_PASSWORD')
+define('DB_PASSWORD', getenv('WORDPRESS_DB_PASSWORD'));
 
 #database hostname
-define('DB_HOST', 'mariadb');
+define('DB_HOST', getenv('WORDPRESS_DB_HOST'));
+
+#error_log('WORDPRESS_DB_HOST=' . getenv('WORDPRESS_DB_HOST'));
+#error_log('WORDPRESS_DB_USER=' . getenv('WORDPRESS_DB_USER'));
+#error_log('WORDPRESS_DB_PASSWORD=' . getenv('WORDPRESS_DB_PASSWORD'));
+#error_log('WORDPRESS_DB_NAME=' . getenv('WORDPRESS_DB_NAME'));
 
 #database charset, utf8mb4 for unicode support (non-latin characters, for example)
 define('DB_CHARSET', 'utf8mb4');

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 FROM debian:oldstable
 
 RUN apt-get update -y 
@@ -17,4 +19,4 @@ RUN mkdir -p /var/lib/mysql && chown -R mysql:mysql /var/lib/mysql
 RUN mkdir -p /var/run/mysqld && chown -R mysql:mysql /var/run/mysqld
 
 #CMD ["tail", "-f"]
-CMD ["bash", "/mariadb-script.sh"]
+CMD ["/mariadb-script.sh"]

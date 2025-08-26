@@ -20,8 +20,12 @@ RUN rm -rf /var/lib/apt/lists/*
 
 COPY ./script/wordpress-script.sh /
 
+#RUN wp config create --dbname="$WORDPRESS_DB_NAME" --dbuser"$WORDPRESS_DB_USER" --dbpass="$WORDPRESS_DB_PASSWORD" --dbhost="$WORDPRESS_DB_HOST" --allow-root
+
 COPY ./script/wp-config.php /
 
 RUN chmod +x /wordpress-script.sh
+
+RUN sed -i 's/^;clear_env = no/clear_env = no/' /etc/php/8.2/fpm/pool.d/www.conf
 
 CMD ["/wordpress-script.sh"]

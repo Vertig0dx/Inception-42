@@ -43,6 +43,10 @@ done
 
 cp /wp-config.php /var/www/html/wp-config.php
 
+#if [ ! -f var/www/html/wp-config.php] ; then
+
+#    wp config create --dbname="$WORDPRESS_DB_NAME" --dbuser"$WORDPRESS_DB_USER" --dbpass="$WORDPRESS_DB_PASSWORD" --dbhost="$WORDPRESS_DB_HOST" --allow-root
+
 #wait for mariadb to be ready...
 echo "Awaiting mariadb signal..."
 

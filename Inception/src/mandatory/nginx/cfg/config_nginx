@@ -5,7 +5,7 @@ server {
 
     server_name www.lmiguel.42.fr lmiguel.42.fr;
    
-    return 301 https://$host$request_uri;
+    return 301 https://\$host\$request_uri;
 }
 
 
