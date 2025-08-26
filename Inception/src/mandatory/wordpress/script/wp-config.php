@@ -34,25 +34,25 @@ define('WP_ALLOW_REPAIR', true);
 
 //WARNING: CHANGING ANY OF THESE KEYS WILL FORCE A USER TO LOGIN AGAIN AND ERASE ALL COOKIES. USER DISCRETION IS ADVISED.
 
-define('AUTH_KEY',         'UcViWUJmVS8uK>-K|vv42&>gcQ0D/<?. [wp5/c<0~G9;qqhTR Mi+;AITe9OnoB');
+define('AUTH_KEY', getenv('AUTH_KEY'));
 
-define('SECURE_AUTH_KEY',  'g$tj|{+dYQsbm<<GZ*R&|=R6g7]ob|<+kI%.nWx +nVvO1mql2BL5-5CI(+*{J&R');
+define('SECURE_AUTH_KEY', getenv('SECURE_AUTH_KEY'));
 
-define('LOGGED_IN_KEY',    '>6~*C;<SYm~y;IPE`ziQ8N{-Ns},|>@Nj%jLCLnGFh7pRIgZTK|m5^N{#kC51qT5');
+define('LOGGED_IN_KEY', getenv('LOGGED_IN_KEY'));
 
-define('NONCE_KEY',        'k?yX> jqyX>lti-[X(.5ulJP^5HMs7?Mq}0dQ{>M,>u1Tv3Q|skB45!XP|`HFtR(');
+define('NONCE_KEY', getenv('NONCE_SALT'));
 
-define('AUTH_SALT',        'LYa6GkZlOxU TW-`g`|-xu]BXxKfO1^?@jC5b]APd9N_QXW[7!<f+ko}-7!:DOMT');
+define('AUTH_SALT', getenv('AUTH_SALT'));
 
-define('SECURE_AUTH_SALT', 's5E*&O]kA]Ff|:*}PBZQK>uq??C^l&)DA2VCs&p9i,Fv!|vw&9z/!;bq9Jp|vH;T');
+define('SECURE_AUTH_SALT', getenv('SECURE_AUTH_SALT'));
 
-define('LOGGED_IN_SALT',   '|%upf[B-j8vRZ2*/tqBJVrSE)LO%:EAq|&<d>47QE;}K`UA(a$Jx?i4Wb)/3P$X+');
+define('LOGGED_IN_SALT', getenv('LOGGED_IN_SALT'));
 
-define('NONCE_SALT',       ' 8=SYqJ2z`SMPZSt;3)d-KVBkiR(@+z.@[UFwoaZkn-v8OqEQ5d9wB3W,->Ta$$t');
+define('NONCE_SALT', getenv('NONCE_SALT'));
 
 #redis options (REQUIRES php8.3-redis EXTENSION IN DOCKERFILE)
 
-define('WP_REDIS_HOST', 'redis');
+define('WP_REDIS_HOST', getenv('WORDPRESS_REDIS_HOST'));
 
 define('WP_REDIS_PORT', 6379);
 
